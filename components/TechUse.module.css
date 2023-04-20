@@ -1,0 +1,34 @@
+.tool_img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.tool_wrap {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tool {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+
+  /* box-sizing: border-box; */
+}
+.tool_box {
+  flex-direction: column;
+  display: flex;
+  width: 32%;
+}
+
+.tool_title {
+  color: white;
+  background-color: black;
+  width: 100%;
+  padding: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
