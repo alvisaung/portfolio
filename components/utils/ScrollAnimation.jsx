@@ -9,8 +9,12 @@ const ScrollAnimation = ({ children, ...rest }) => {
     triggerOnce: true,
   });
   const animation = useAnimation();
+  const { delay_time, trigger } = rest;
 
   useEffect(() => {
+    if (trigger != null) {
+      return;
+    }
     if (inView) {
       animation.start("visible");
     } else {
@@ -18,7 +22,12 @@ const ScrollAnimation = ({ children, ...rest }) => {
     }
   }, [animation, inView]);
 
-  const { delay_time } = rest;
+  useEffect(() => {
+    if (trigger) {
+      animation.start("hidden");
+      animation.start("visible");
+    }
+  }, [trigger]);
   return (
     <motion.section variants={FadeInVariants(delay_time ?? 0.1)} initial="hidden" animate={animation} ref={ref}>
       {children}

@@ -3,8 +3,9 @@ export const FadeInVariants = (delay) => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: 1,
         delay: delay,
+        ease: "easeInOut",
         // scale: {
         //   type: "spring",
         //   damping: 10,
