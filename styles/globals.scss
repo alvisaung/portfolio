@@ -8,8 +8,20 @@
 
   --main-font: "Lato";
   --title-font-size: 3.5rem;
+  --title-font-mobile-size: 2.5rem;
   --sub-title-font-size: 1.6rem;
+  --title-margin-btm: 40px;
+  --title-margin-btm-mobile: 20px;
+
+  --description-font-size: 21px;
+  --description-font-size-mobile: 17px;
+
+  --mobile-breakpoint: 576px; // for mobile screens
+  --tablet-breakpoint: 768px; // for tablet screens
+  --desktop-breakpoint: 992px; // for desktop screens
+  --large-desktop-breakpoint: 1200px; // for large desktop screens
 }
+@import "Breakpoints";
 
 @font-face {
   font-family: "Lato";
@@ -60,6 +72,12 @@ body {
   border: 3px solid black;
   border-radius: 30px;
   cursor: pointer;
+  font-size: 22px;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    font-size: 16px;
+    // margin-top: 20px;
+    padding: 10px 12px;
+  }
 }
 .button:hover {
   background-color: yellowgreen;
@@ -73,6 +91,10 @@ body {
   color: black;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+    padding: 5px 5px 5px 8px;
+  }
 }
 
 .sub-title {
@@ -88,6 +110,17 @@ body {
 .center {
   text-align: center;
 }
+.drawer {
+  position: absolute;
+  line-height: 55px;
+  top: 100%;
+  background: white;
+  height: 100vh;
+  width: 164px;
+  right: 0px;
+  border-left: 2px solid lightgray;
+  padding-left: 7px;
+}
 
 .nav-gp {
   padding: 25px 15px;
@@ -96,6 +129,11 @@ body {
   box-sizing: border-box;
   background-color: white;
   z-index: 11;
+  display: flex;
+  justify-content: end;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    padding: 12px 12px;
+  }
 }
 .link-gp {
   display: flex;

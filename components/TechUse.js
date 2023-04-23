@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TechUse.module.css";
+import styles from "./TechUse.module.scss";
 
 let TechBranch = {
   front_end: "Front End",
@@ -83,7 +83,7 @@ const RenderBox = (tool) => {
   return (
     <div className={styles.box}>
       {tool.map((t) => (
-        <img src={t.path} alt={t.name} className={styles.tool_img} />
+        <img key={t.path} src={t.path} alt={t.name} className={styles.tool_img} />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styles from "./Project.module.css";
+import styles from "./Project.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { Img } from "./Project";
 
@@ -24,9 +24,9 @@ const ImageCarousel: FC<{ img_gp: Img[] }> = ({ img_gp }) => {
   return (
     <div className={styles.img_carousal_gp}>
       <div ref={sliderRef} className={`keen-slider ${styles.img}`}>
-        {img_gp.map((img) => {
+        {img_gp.map((img, id) => {
           return (
-            <div key={img.url}>
+            <div key={id}>
               <img src={img.url} alt={img.img_desc} className={`keen-slider__slide `} />
             </div>
           );
@@ -58,7 +58,7 @@ const ImageCarousel: FC<{ img_gp: Img[] }> = ({ img_gp }) => {
   );
 };
 function Arrow(props: any) {
-  if (props.disabled) return;
+  if (props.disabled) return <></>;
   return (
     <div onClick={props.onClick} className={`${styles.arrow_box}  ${props.left ? "arrow--left" : "arrow--right"} `}>
       <svg className={` arrow`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

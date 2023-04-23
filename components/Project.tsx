@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import styles from "./Project.module.css";
+import styles from "./Project.module.scss";
 import "keen-slider/keen-slider.min.css";
 
 import ImageCarousel from "./ImageCarousel";
@@ -40,11 +40,11 @@ const Project: FC<ProjectProps> = ({ title, desc, tech_use, img_gp, actions }) =
     <div className={styles.project}>
       <div className={styles.title}>{title}</div>
       <ImageCarousel img_gp={img_gp} />
-      <div className={styles.project_desc}>{FormatTxt({ type: FormatType.LineBreak, txt: desc })}</div>
-      <div className={`${styles.project_desc} ${styles.project_tech}`}>
-        Technologies:<span className={styles.project_sub_desc}> {FormatTxt({ type: FormatType.Comma, txt: tech_use })}</span>
-      </div>
-      <div className={`${styles.project_desc} ${styles.project_tech}`}>
+      <div className={styles.project_content}>
+        <div className={styles.project_desc}>{FormatTxt({ type: FormatType.LineBreak, txt: desc })}</div>
+        <div className={`${styles.project_desc} ${styles.project_tech}`}>
+          Technologies:<span className={styles.project_sub_desc}> {FormatTxt({ type: FormatType.Comma, txt: tech_use })}</span>
+        </div>
         {actions.map((action) => (
           <button onClick={() => window.open(action.url, "_blank")} key={action.url} className="button project-action-btn">
             {action.action}
@@ -89,6 +89,6 @@ const FormatTxt = (formatInt: FormatInt): JSX.Element => {
       break;
   }
 
-  return <span>{formatted}</span>;
+  return <>{formatted}</>;
 };
 export default Project;

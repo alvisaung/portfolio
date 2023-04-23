@@ -1,7 +1,13 @@
+@import "../styles/Breakpoints.scss";
+
 .tool_img {
   width: 64px;
   height: 64px;
   object-fit: contain;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .tool_wrap {
@@ -10,6 +16,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media only screen and (max-width: $mobile-breakpoint) {
+    gap: 5px;
+  }
 }
 .tool {
   border: 1px solid black;
@@ -22,6 +32,10 @@
   flex-direction: column;
   display: flex;
   width: 32%;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    flex-grow: 1;
+    width: 33%;
+  }
 }
 
 .tool_title {

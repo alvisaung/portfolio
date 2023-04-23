@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 import Project from "@/components/Project";
 import TypeFont from "@/components/utils/TypeFont";
 import ScrollAnimation from "@/components/utils/ScrollAnimation";
@@ -8,23 +8,24 @@ import "keen-slider/keen-slider.min.css";
 import TechUse from "@/components/TechUse";
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Nav from "@/components/Nav";
+import { Page_Section } from "@/data/type";
 
-enum Page_Section {
-  portfolio_sec = "portfolio_sec",
-  about_me_sec = "about_me_sec",
-  resume_sec = "resume_sec",
-  contact_sec = "contact_sec",
-}
-
-const nav_menu = [
-  { name: "Portfolio", id: Page_Section.portfolio_sec },
-  { name: "About", id: Page_Section.about_me_sec },
-  { name: "Resume", id: Page_Section.resume_sec },
-  { name: "Contact", id: Page_Section.contact_sec },
-  { name: "Github", id: "https://github.com/alvisaung" },
-  { name: "Linkedin", id: "https://www.linkedin.com/in/alvis-aung-ab660b225/" },
-];
 export default function Home() {
+  const [type_anim_complete, setTypeAnimComplete] = useState(false);
+
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.0009,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   const scrollToSection = (id: Page_Section) => {
     if (!Object.values(Page_Section).includes(id)) {
       window.open(id, "_blank");
@@ -37,19 +38,6 @@ export default function Home() {
     window.scrollTo({ behavior: "smooth", top: finalPos });
   };
 
-  const sentence = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.0009,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-  // const { ref: portfolio_ref, inView } = useInView({ threshold: 0.05 });
-  // const { ref: about_me_ref, inView: about_me_in_view } = useInView({ threshold: 0.05 });
-
   return (
     <>
       <Head>
@@ -60,40 +48,34 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className="row nav-gp">
-          <div className="logo">Logo</div>
-          <nav className="link-gp">
-            {nav_menu.map((nav) => (
-              <ul key={nav.id} className="nav_menu_item" onClick={() => scrollToSection(nav.id)}>
-                {nav.name}
-              </ul>
-            ))}
-          </nav>
-        </div>
+        <Nav scrollToSection={scrollToSection} />
         <div className={styles.intro} id="top">
-          <motion.div className={styles.intro_txt} variants={sentence} initial="hidden" animate="visible">
+          <motion.h2 className={styles.intro_txt} variants={sentence} initial="hidden" animate="visible" onAnimationComplete={() => setTypeAnimComplete(true)}>
             {TypeFont("Hello! My name is")} <br />
             <span className={styles.intro_txt_center}>{TypeFont("Alvis Aung.")}</span> <br />
             {TypeFont("I'm a fullstack software engineer.")}
-          </motion.div>
-          <button className="button" style={{ marginTop: 10, fontSize: 22 }} onClick={() => scrollToSection(Page_Section.portfolio_sec)}>
-            View Portfolio
-          </button>
+          </motion.h2>
+
+          <ScrollAnimation trigger={type_anim_complete}>
+            <button className="button" onClick={() => scrollToSection(Page_Section.portfolio_sec)}>
+              View Portfolio
+            </button>
+          </ScrollAnimation>
         </div>
         <div className={`${styles.portfolio_sec} section`} id={Page_Section.portfolio_sec}>
           <ScrollAnimation delay_time={0}>
             <h4 className={`center ${styles.portfo_head}`}>Portfolio</h4>
           </ScrollAnimation>
 
-          {ProjectData.map((project) => (
-            <ScrollAnimation delay_time={0}>
+          {ProjectData.map((project, id) => (
+            <ScrollAnimation delay_time={0} key={id}>
               <Project title={project.title} desc={project.desc} tech_use={project.tech_use} actions={project.actions} img_gp={project.img_gp} />
             </ScrollAnimation>
           ))}
         </div>
         <div className={`${styles.about_me_sec} section`} id={Page_Section.about_me_sec}>
           <ScrollAnimation>
-            <h4 className={`center ${styles.portfo_head}`}>About Me </h4>
+            <h4 className={`center ${styles.portfo_head}`}>About Me</h4>
             <div className={styles.me_gp}>
               <img src="/img/me.jpg" alt="Alvis" className={styles.my_pic} />
               <div className={styles.my_desc}>ndustry. Lorem Ipsum has been the ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only fiveindustry's standard dummy text ever since the 1500s, </div>
@@ -120,7 +102,7 @@ export default function Home() {
         </div>
         <div className="section" id={Page_Section.contact_sec}>
           <ScrollAnimation>
-            <h4 className={`center ${styles.portfo_head}`}>Contact</h4>
+            <h4 className={`center ${styles.portfo_head}`}>Contact Me</h4>
             <div className={styles.contact_icon_gp}>
               <Link href={`mailto:alvisaung@gmail.com`}>
                 <img src="/img/email.png" className={styles.contact_icon} />

@@ -1,9 +1,15 @@
+@import "../styles/Breakpoints.scss";
+
 .title {
   text-align: center;
   font-size: 30px;
   margin-top: 40px;
   font-family: lato-bold;
   margin-bottom: 15px;
+
+  @media only screen and (max-width: $mobile-breakpoint) {
+    font-size: 25px;
+  }
 }
 
 .img_carousal_gp {
@@ -13,21 +19,39 @@
 
 .project {
   margin-bottom: 80px;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    margin-bottom: 60px;
+  }
 }
 .project_tech {
   text-transform: capitalize;
+  margin-bottom: 15px;
 }
+
 .project_sub_desc {
   font-size: 20px;
   font-weight: bold;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    font-size: 16px;
+  }
 }
 .project_desc {
-  font-size: 21px;
+  font-size: var(--description-font-size);
   /* font-family: Arial, Helvetica, sans-serif; */
   color: #333;
   margin-top: 15px;
   line-height: 1.48em;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    font-size: var(--description-font-size-mobile);
+    margin-top: 5px;
+  }
   /* text-align: justify; */
+}
+.project_content {
+  padding: 0px;
+  @media only screen and (max-width: $mobile-breakpoint) {
+    padding: 0px 10px;
+  }
 }
 
 .arrow_box {
