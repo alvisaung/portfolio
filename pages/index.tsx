@@ -79,7 +79,11 @@ export default function Home() {
             <h4 className={`center ${styles.portfo_head}`}>About Me</h4>
             <div className={styles.me_gp}>
               <img src="/img/me.jpg" alt="Alvis" className={styles.my_pic} />
-              <div className={styles.my_desc}>ndustry. Lorem Ipsum has been the ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only fiveindustry's standard dummy text ever since the 1500s, </div>
+              <div className={styles.my_desc}>
+                A passionate and detail-oriented full-stack software engineer with over 2 years of experience developing web applications. My expertise lies in using frameworks like React and PHP to build scalable and robust applications. I have a proven track record of delivering high-quality work on time and collaborating effectively with team members.
+                <br />
+                In addition to my technical skills, I am a natural leader who takes initiative and works well under pressure. I am also an avid reader and enjoy hitting the gym in my free time to stay fit and focused. I am excited to bring my skills and enthusiasm to a new challenge and am committed to making a meaningful contribution to any team I join.
+              </div>
             </div>
           </ScrollAnimation>
           <ScrollAnimation>

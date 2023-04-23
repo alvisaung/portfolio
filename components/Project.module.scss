@@ -11,6 +11,11 @@
     font-size: 25px;
   }
 }
+.slide_img {
+  height: 400px;
+  background-color: lightgray;
+  object-fit: cover;
+}
 
 .img_carousal_gp {
   position: relative;

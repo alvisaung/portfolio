@@ -27,7 +27,7 @@ const ImageCarousel: FC<{ img_gp: Img[] }> = ({ img_gp }) => {
         {img_gp.map((img, id) => {
           return (
             <div key={id}>
-              <img src={img.url} alt={img.img_desc} className={`keen-slider__slide `} />
+              <img src={img.url} alt={img.img_desc} className={`keen-slider__slide ${styles.slide_img}`} />
             </div>
           );
         })}
