@@ -26,12 +26,13 @@ export default function Home() {
     },
   };
 
-  const scrollToSection = (id: Page_Section) => {
-    if (!Object.values(Page_Section).includes(id)) {
+  const scrollToSection = (id: any) => {
+    const element = document.getElementById(id);
+
+    if (!Object.values(Page_Section).includes(id) || element == null) {
       window.open(id, "_blank");
       return;
     }
-    const element = document.getElementById(id);
     const topPos = element.getBoundingClientRect().top + window.pageYOffset;
     const finalPos = topPos - 70;
 

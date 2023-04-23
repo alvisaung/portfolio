@@ -11,7 +11,7 @@ const nav_menu = [
   { name: "Linkedin", id: "https://www.linkedin.com/in/alvis-aung-ab660b225/" },
 ];
 
-const Nav = ({ scrollToSection }: { scrollToSection: (id: number) => void }) => {
+const Nav = ({ scrollToSection }: { scrollToSection: (id: any) => void }) => {
   const [is_mobile_screen, setIsMobileScreen] = useState(false);
   const [open_drawer, setOpenDrawer] = useState(false);
   useEffect(() => {
