@@ -31,6 +31,10 @@ const ImageCarousel: FC<{ img_gp: Img[] }> = ({ img_gp }) => {
             </div>
           );
         })}
+        {/* <video muted playsInline autoPlay controls={false} preload="auto" loop className={`keen-slider__slide ${styles.slide_img}`}>
+          <source src="bunny.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video> */}
         <div className={`${styles.img_desc} `}>{img_gp[currentSlide].img_desc}</div>;
       </div>
       {loaded && instanceRef.current && (

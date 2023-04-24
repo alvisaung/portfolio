@@ -59,4 +59,83 @@ export const ProjectData = [
       },
     ],
   },
+  {
+    title: "SaleSucceed",
+    desc: "A Commission-based Sales Platform with Lead and Invoice management. ",
+    tech_use: ["NextJS", "ContextAPI", "Laravel", "MySql"],
+    img_gp: [
+      {
+        url: "/img/projects/salesucceed/home.jpg",
+        img_desc: "Landing Page",
+      },
+    ],
+    actions: [
+      {
+        url: "https://salesucceed.com/",
+        action: ActionType.TRY_DEMO,
+      },
+    ],
+  },
 ];
+
+export const TechUseData = {
+  front_end: [
+    {
+      path: "img/tools/frontend/react.png",
+      name: "React",
+    },
+    {
+      path: "img/tools/frontend/redux.png",
+      name: "Redux",
+    },
+    { path: "img/tools/frontend/material_ui.png", name: "Material UI" },
+  ],
+  backend: [
+    {
+      path: "img/tools/backend/node.png",
+      name: "Node JS",
+    },
+    {
+      path: "img/tools/backend/socket.png",
+      name: "Socket JS",
+    },
+    {
+      path: "img/tools/backend/laravel.png",
+      name: "Laravel",
+    },
+  ],
+  devops: [
+    {
+      path: "img/tools/devops/githublogo.png",
+      name: "Github",
+    },
+    {
+      path: "img/tools/devops/gitlogo.png",
+      name: "Git",
+    },
+    {
+      path: "img/tools/devops/npm.png",
+      name: "NPM",
+    },
+    {
+      path: "img/tools/devops/webpack.png",
+      name: "Webpack",
+    },
+  ],
+  language: [
+    {
+      path: "img/tools/language/js.png",
+      name: "Javascript",
+    },
+    {
+      path: "img/tools/language/php.png",
+      name: "PHP",
+    },
+  ],
+  tools: [
+    {
+      path: "img/tools/tools/postman.png",
+      name: "Postman",
+    },
+  ],
+};
