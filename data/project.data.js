@@ -3,7 +3,7 @@ import { ActionType } from "@/components/Project";
 export const ProjectData = [
   {
     title: "Prushoppe",
-    desc: "Work as a contract full-stack developer in developing an issuance purchasing platform for Prudential Laos Life Assurance. Acting as a role of technical lead plus full-stack developer, assigning tasks to coworkers and direct communicate with client for requirements and feedback. Project involves interfaces and control system for admin, user, staff and partner.",
+    desc: "An insurance purchasing platform for Prudential Laos Life Assurance. Project involves interfaces and control system for admin, user, staff and partner. User can purchase insurance product in the platform and making payment with BCEL One Pay. <br/> Project involves lead management system, request monitoring system, POS system ,etc.  <br/>Acting as a role of technical lead plus full-stack developer, assigning tasks to coworkers and direct communicate with client for requirements and feedback.",
     tech_use: ["React", "NextJS", "MaterialUI", "Laravel", "MySql"],
     img_gp: [
       {
