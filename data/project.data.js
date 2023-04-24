@@ -7,16 +7,24 @@ export const ProjectData = [
     tech_use: ["React", "NextJS", "MaterialUI", "Laravel", "MySql"],
     img_gp: [
       {
-        url: "https://loremflickr.com/640/480/dog",
-        img_desc: "This is img 1",
+        url: "/img/projects/prudential/home.jpg",
+        img_desc: "Home page of user interface",
       },
       {
-        url: "https://source.unsplash.com/random/800x600",
-        img_desc: "This is img 2",
+        url: "/img/projects/prudential/detail.jpg",
+        img_desc: "Product Detail",
       },
       {
-        url: "https://source.unsplash.com/random/800x600",
-        img_desc: "This is img 2",
+        url: "/img/projects/prudential/cart.jpg",
+        img_desc: "Product Cart",
+      },
+      {
+        url: "/img/projects/prudential/customer_portal.jpg",
+        img_desc: "Customer Portal",
+      },
+      {
+        url: "/img/projects/prudential/claim_submit.jpg",
+        img_desc: "Claim Submit",
       },
     ],
     actions: [
