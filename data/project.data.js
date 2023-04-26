@@ -76,6 +76,39 @@ export const ProjectData = [
       },
     ],
   },
+  {
+    title: "ClearChannel Ads Panel",
+    desc: "Small interactive games develop for ads company, ClearChannel in Singapore as advertisement on their panels. Direct communication with project manager in discussing requirements. Mainly use the Javascript, HTML/SASS, Canvas, GSAP (animation), and laravel for backend.",
+    tech_use: ["ReactJS", "HTML Canvas", "GSAP", "Laravel"],
+    img_gp: [
+      {
+        url: "/img/projects/cc/giftcatch.mp4",
+        is_video: true,
+        img_desc: "Catching Gift on Panel",
+      },
+      {
+        url: "/img/projects/cc/bagel.mp4",
+        is_video: true,
+        img_desc: "Moving Bagel",
+      },
+      {
+        url: "/img/projects/cc/dengue.mp4",
+        is_video: true,
+        img_desc: "Memory Game",
+      },
+      {
+        url: "/img/projects/cc/wallysally.mp4",
+        is_video: true,
+        img_desc: "Photobooth with Wall & Sally",
+      },
+    ],
+    actions: [
+      {
+        url: "https://cc.ninetyfivegroup.com/",
+        action: ActionType.TRY_DEMO,
+      },
+    ],
+  },
 ];
 
 export const TechUseData = {

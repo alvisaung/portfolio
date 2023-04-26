@@ -7,6 +7,7 @@ import ImageCarousel from "./ImageCarousel";
 export interface Img {
   url: string;
   img_desc: string;
+  is_video?: boolean;
 }
 export enum ActionType {
   TRY_DEMO = "Try demo",
