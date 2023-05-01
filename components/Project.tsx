@@ -22,12 +22,13 @@ interface ProjectAction {
 interface ProjectProps {
   title: string;
   desc: string;
+  involve: string;
   tech_use: string[];
   img_gp: Img[];
   actions: ProjectAction[];
 }
 
-const Project: FC<ProjectProps> = ({ title, desc, tech_use, img_gp, actions }) => {
+const Project: FC<ProjectProps> = ({ title, desc, tech_use, img_gp, actions, involve }) => {
   const renderEmoji = (action: ActionType) => {
     let img = "";
     if (action == ActionType.TRY_DEMO) {
@@ -44,7 +45,7 @@ const Project: FC<ProjectProps> = ({ title, desc, tech_use, img_gp, actions }) =
       <div className={styles.project_content}>
         <div className={styles.project_desc}>{FormatTxt({ type: FormatType.LineBreak, txt: desc })}</div>
         <div className={`${styles.project_desc} ${styles.project_tech}`}>
-          Technologies:<span className={styles.project_sub_desc}> {FormatTxt({ type: FormatType.Comma, txt: tech_use })}</span>
+          Technologies: <span className={styles.project_sub_desc}> {FormatTxt({ type: FormatType.Comma, txt: tech_use })}</span>
         </div>
         {actions.map((action) => (
           <button onClick={() => window.open(action.url, "_blank")} key={action.url} className="button project-action-btn">

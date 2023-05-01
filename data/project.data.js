@@ -3,6 +3,7 @@ import { ActionType } from "@/components/Project";
 export const ProjectData = [
   {
     title: "Prushoppe",
+    involve: "My in",
     desc: "An insurance purchasing platform for Prudential Laos Life Assurance. Project involves interfaces and control system for admin, user, staff and partner. User can purchase insurance product in the platform and making payment with BCEL One Pay. <br/> Project involves lead management system, request monitoring system, POS system ,etc.  <br/>Acting as a role of technical lead plus full-stack developer, assigning tasks to coworkers and direct communicate with client for requirements and feedback.",
     tech_use: ["React", "NextJS", "MaterialUI", "Laravel", "MySql"],
     img_gp: [
@@ -36,6 +37,7 @@ export const ProjectData = [
   },
   {
     title: "PayBolt",
+    involve: "My in",
     desc: "Working as a full-time react native blockchain developer in PayBolt, a Singapore based blockchain startup company. <br/> Build a crypto app using React Native that is enable to create wallet, send and receive crypto, wallet connect with DAPP app, notifications and so on.",
     tech_use: ["React Native", "Redux", "Web3", "Ethers.js", "Cyptocurrency"],
     img_gp: [
@@ -60,13 +62,34 @@ export const ProjectData = [
     ],
   },
   {
-    title: "SaleSucceed",
-    desc: "A Commission-based Sales Platform with Lead and Invoice management. ",
-    tech_use: ["NextJS", "ContextAPI", "Laravel", "MySql"],
+    title: "Sale Succeed",
+    // invoice creation/management, chatting between sales and business
+    // Proposals Workflow, SaleAgent Upload Lead Creation
+    // Notification, Jobs Management
+    //
+
+    desc: "A Commission-based Sales Platform that help to connect businesses with commission-based sales experts globally. The platform offers businesses access to top commission-based sales talent, allowing them to eliminate the need to hire, train and retain a full-time sales force.  It also offers independent sales agents access to rewarding sales opportunities and curated commission-based sales opportunities across industries and geographies, giving them full control over the projects they choose based on their expertise and interest.",
+    tech_use: ["NextJS", "Laravel", "NodeJS", "Socket.IO", "MySql", "MaterialUI"],
     img_gp: [
       {
         url: "/img/projects/salesucceed/home.jpg",
         img_desc: "Landing Page",
+      },
+      {
+        url: "/img/projects/salesucceed/sales_dashboard.jpg",
+        img_desc: "Sales' Dashboard",
+      },
+      {
+        url: "/img/projects/salesucceed/sales_profile.jpg",
+        img_desc: "Sales Profile",
+      },
+      {
+        url: "/img/projects/salesucceed/sale_update_profile.jpg",
+        img_desc: "Sales update profile",
+      },
+      {
+        url: "/img/projects/salesucceed/browse_project.jpg",
+        img_desc: "Sales browse for project",
       },
     ],
     actions: [

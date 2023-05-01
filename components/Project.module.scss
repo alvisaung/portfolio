@@ -12,7 +12,7 @@
   }
 }
 .slide_img {
-  height: 400px;
+  max-height: 400px;
   background-color: gray;
   object-fit: contain;
 }
@@ -31,10 +31,11 @@
 .project_tech {
   text-transform: capitalize;
   margin-bottom: 15px;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .project_sub_desc {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   @media only screen and (max-width: $mobile-breakpoint) {
     font-size: 16px;
@@ -42,10 +43,10 @@
 }
 .project_desc {
   font-size: var(--description-font-size);
-  /* font-family: Arial, Helvetica, sans-serif; */
-  color: #333;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(41, 41, 41, 0.75);
   margin-top: 15px;
-  line-height: 1.48em;
+  line-height: 32px;
   @media only screen and (max-width: $mobile-breakpoint) {
     font-size: var(--description-font-size-mobile);
     margin-top: 5px;
