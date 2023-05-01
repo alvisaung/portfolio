@@ -73,7 +73,7 @@ export default function Home() {
 
           {ProjectData.map((project, id) => (
             <ScrollAnimation delay_time={0} key={id}>
-              <Project title={project.title} desc={project.desc} tech_use={project.tech_use} actions={project.actions} img_gp={project.img_gp} />
+              <Project involve={"I invo"} title={project.title} desc={project.desc} tech_use={project.tech_use} actions={project.actions} img_gp={project.img_gp} />
             </ScrollAnimation>
           ))}
         </div>

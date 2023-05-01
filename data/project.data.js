@@ -3,8 +3,8 @@ import { ActionType } from "@/components/Project";
 export const ProjectData = [
   {
     title: "Prushoppe",
-    involve: "My in",
-    desc: "An insurance purchasing platform for Prudential Laos Life Assurance. Project involves interfaces and control system for admin, user, staff and partner. User can purchase insurance product in the platform and making payment with BCEL One Pay. <br/> Project involves lead management system, request monitoring system, POS system ,etc.  <br/>Acting as a role of technical lead plus full-stack developer, assigning tasks to coworkers and direct communicate with client for requirements and feedback.",
+    involve: "Acting as a role of technical lead plus full-stack developer, assigning tasks to coworkers and direct communicate with client for requirements and feedback.",
+    desc: "An insurance purchasing platform for Prudential Laos Life Assurance. Project involves interfaces and control system for admin, user, staff and partner. User can purchase insurance product in the platform and making payment with BCEL One Pay. <br/> Project involves lead management system, request monitoring system, POS system ,etc.",
     tech_use: ["React", "NextJS", "MaterialUI", "Laravel", "MySql"],
     img_gp: [
       {
