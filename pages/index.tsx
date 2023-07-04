@@ -20,8 +20,8 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        delay: 0.0009,
-        staggerChildren: 0.1,
+        // delayChildren: 1,
+        staggerChildren: 0.7,
       },
     },
   };
@@ -57,11 +57,10 @@ export default function Home() {
           <motion.h2 className={styles.intro_txt} variants={sentence} initial="hidden" animate="visible" onAnimationComplete={() => setTypeAnimComplete(true)}>
             {TypeFont("Hello! My name is")} <br />
             <span className={styles.intro_txt_center}>{TypeFont("Alvis Aung.")}</span> <br />
-            {TypeFont("I'm a fullstack software engineer.")}
+            <span style={{ lineHeight: "1.15em" }}> {TypeFont("I'm a fullstack software engineer.")}</span>
           </motion.h2>
-
           <ScrollAnimation trigger={type_anim_complete}>
-            <button className="button" onClick={() => scrollToSection(Page_Section.portfolio_sec)}>
+            <button style={{ position: "relative" }} className="button" onClick={() => scrollToSection(Page_Section.portfolio_sec)}>
               View Portfolio
             </button>
           </ScrollAnimation>
@@ -73,7 +72,7 @@ export default function Home() {
 
           {ProjectData.map((project, id) => (
             <ScrollAnimation delay_time={0} key={id}>
-              <Project involve={"I invo"} title={project.title} desc={project.desc} tech_use={project.tech_use} actions={project.actions} img_gp={project.img_gp} />
+              <Project project={project} />
             </ScrollAnimation>
           ))}
         </div>
@@ -83,7 +82,7 @@ export default function Home() {
             <div className={styles.me_gp}>
               <img src="/img/me.jpg" alt="Alvis" className={styles.my_pic} />
               <div className={styles.my_desc}>
-                A passionate and detail-oriented full-stack software engineer with over 2 years of experience developing web applications. My expertise lies in using frameworks like React and PHP to build scalable and robust applications. I have a proven track record of delivering high-quality work on time and collaborating effectively with team members.
+                A passionate and detail-oriented full-stack software engineer with over 2 years of experience developing web applications. My expertise lies in using frameworks like React and PHP to build scalable and robust applications.
                 <br />
                 In addition to my technical skills, I am a natural leader who takes initiative and works well under pressure. I am also an avid reader and enjoy hitting the gym in my free time to stay fit and focused. I am excited to bring my skills and enthusiasm to a new challenge and am committed to making a meaningful contribution to any team I join.
               </div>

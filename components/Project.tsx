@@ -19,16 +19,20 @@ interface ProjectAction {
   action: ActionType;
 }
 
-interface ProjectProps {
+interface Project {
   title: string;
   desc: string;
-  involve: string;
+  role: string;
   tech_use: string[];
   img_gp: Img[];
   actions: ProjectAction[];
 }
 
-const Project: FC<ProjectProps> = ({ title, desc, tech_use, img_gp, actions, involve }) => {
+interface ProjectProps {
+  project: Project;
+}
+
+const Project: FC<ProjectProps> = (props) => {
   const renderEmoji = (action: ActionType) => {
     let img = "";
     if (action == ActionType.TRY_DEMO) {
@@ -38,12 +42,17 @@ const Project: FC<ProjectProps> = ({ title, desc, tech_use, img_gp, actions, inv
     }
     return img;
   };
+  const { title, desc, tech_use, img_gp, actions, role } = props.project;
+
   return (
     <div className={styles.project}>
       <div className={styles.title}>{title}</div>
       <ImageCarousel img_gp={img_gp} />
       <div className={styles.project_content}>
         <div className={styles.project_desc}>{FormatTxt({ type: FormatType.LineBreak, txt: desc })}</div>
+        <div className={`${styles.project_desc} ${styles.project_tech}`}>
+          Role: <span className={styles.project_sub_desc}>{role}</span>
+        </div>
         <div className={`${styles.project_desc} ${styles.project_tech}`}>
           Technologies: <span className={styles.project_sub_desc}> {FormatTxt({ type: FormatType.Comma, txt: tech_use })}</span>
         </div>
